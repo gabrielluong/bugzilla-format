@@ -1,0 +1,9 @@
+name: 'Bugzilla Format'
+description: 'Checks that the pull request title and commit messages are using the correct Bugzilla format.'
+inputs:
+  github-token:
+    required: true
+    description: 'A GitHub access token with write access to the project.'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
