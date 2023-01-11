@@ -24,7 +24,9 @@ async function run() {
     const bugzillaRegExp = new RegExp("\\bBug (\\d+)\\b");
 
     for (const { commit } of commits.data) {
-      if (!commit.message.startsWith("Revert") && !bugzillaRegExp.test(commit.message)) {
+      if (!commit.message.startsWith("Revert") &&
+          !commit.message.startsWith("Merge") &&
+          !bugzillaRegExp.test(commit.message)) {
         const body = `🚧 Commit message is using the wrong format: _${commit.message}_\n\nThe comment message should look like:\n
         Bug xxxx - Short description of your change
         Optionally, a longer description of the change.
