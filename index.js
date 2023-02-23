@@ -28,7 +28,7 @@ async function run() {
           !commit.message.startsWith("Merge") &&
           !bugzillaRegExp.test(commit.message)) {
         const body = `🚧 Commit message is using the wrong format: _${commit.message}_\n\nThe comment message should look like:\n
-        Bug xxxx - Short description of your change
+        Bug xxxx - Short description of your change\n
         Optionally, a longer description of the change.
         `;
 
